@@ -1,5 +1,5 @@
 //
-//  FeedScreen.swift
+//  ViewHeader.swift
 //  Twitter Clone
 //
 //  Created by Daniel Jurma on 24.11.2023.
@@ -7,26 +7,10 @@
 
 import SwiftUI
 
-struct FeedScreen: View {
-    var body: some View {
-        VStack(alignment: .center) {
-            //header
-            Header()
-            Divider()
-            //feed posts
-            ScrollView{
-                Text("Feed postsss")
-            }
-        }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-    }
-}
+struct ViewHeader: View {
+    //params for this component
+    var view : String
 
-
-#Preview {
-    FeedScreen()
-}
-
-struct Header: View {
     var body: some View {
         ZStack{
             //avatar image
@@ -46,8 +30,18 @@ struct Header: View {
             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)// Displays the loaded image.
                
             Spacer()
-            //twitter logo
-            TwitterLogo(frameWidth: 27, paddingTop: 0)
+            //based on the view we are gonna render different hero element/s
+            switch view{
+            case "feed":
+                //twitter logo
+                TwitterLogo(frameWidth: 27, paddingTop: 0)
+            case "search":
+                Text("search input")
+            default:
+                //twitter logo
+                TwitterLogo(frameWidth: 27, paddingTop: 0)
+            }
+           
             Spacer()
             //icon
             Image(systemName: "gearshape")
@@ -59,4 +53,8 @@ struct Header: View {
         .padding(.leading, 10)
         .padding(.trailing, 10)
     }
+}
+
+#Preview {
+    ViewHeader(view: "search")
 }
