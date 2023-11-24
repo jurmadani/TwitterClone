@@ -14,6 +14,7 @@
 		1763E8D42B0BDA6700F38915 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1763E8D32B0BDA6700F38915 /* Assets.xcassets */; };
 		1763E8D72B0BDA6700F38915 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1763E8D62B0BDA6700F38915 /* Preview Assets.xcassets */; };
 		17FB4A742B10AB81008C68FE /* TwitterLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB4A732B10AB81008C68FE /* TwitterLogo.swift */; };
+		17FB4A762B10AED4008C68FE /* FeedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB4A752B10AED4008C68FE /* FeedScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		1763E8D32B0BDA6700F38915 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1763E8D62B0BDA6700F38915 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		17FB4A732B10AB81008C68FE /* TwitterLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterLogo.swift; sourceTree = "<group>"; };
+		17FB4A752B10AED4008C68FE /* FeedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		17085EA52B0E642D00B3D092 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				17FB4A752B10AED4008C68FE /* FeedScreen.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1711D2802B0FAB57005253EC /* SignUpView.swift in Sources */,
+				17FB4A762B10AED4008C68FE /* FeedScreen.swift in Sources */,
 				17085EAA2B0E652000B3D092 /* SignInView.swift in Sources */,
 				1763E8D22B0BDA6600F38915 /* ContentView.swift in Sources */,
 				17FB4A742B10AB81008C68FE /* TwitterLogo.swift in Sources */,
