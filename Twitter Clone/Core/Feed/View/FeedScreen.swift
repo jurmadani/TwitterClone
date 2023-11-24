@@ -38,7 +38,7 @@ struct Header: View {
             TwitterLogo(frameWidth: 27, paddingTop: 0)
             Spacer()
             //icon
-            Image(systemName: "wand.and.stars")
+            Image(systemName: "gearshape")
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 .foregroundColor(Color(UIColor(red: 29/255, green: 161/255, blue: 242/255, alpha: 1.0)))
                 .imageScale(.large)
