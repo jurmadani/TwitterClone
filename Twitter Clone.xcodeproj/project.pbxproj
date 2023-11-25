@@ -21,6 +21,8 @@
 		17FB4A882B10F3C8008C68FE /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB4A872B10F3C8008C68FE /* NotificationsView.swift */; };
 		17FB4A8E2B10F548008C68FE /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB4A8D2B10F548008C68FE /* MessagesView.swift */; };
 		17FB4A902B10FF7F008C68FE /* ViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB4A8F2B10FF7F008C68FE /* ViewHeader.swift */; };
+		17FB4A922B110191008C68FE /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB4A912B110191008C68FE /* SearchBar.swift */; };
+		17FB4A952B1201B4008C68FE /* PagerTabStripView in Frameworks */ = {isa = PBXBuildFile; productRef = 17FB4A942B1201B4008C68FE /* PagerTabStripView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,7 @@
 		17FB4A872B10F3C8008C68FE /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		17FB4A8D2B10F548008C68FE /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		17FB4A8F2B10FF7F008C68FE /* ViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHeader.swift; sourceTree = "<group>"; };
+		17FB4A912B110191008C68FE /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17FB4A952B1201B4008C68FE /* PagerTabStripView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +61,7 @@
 			children = (
 				17FB4A732B10AB81008C68FE /* TwitterLogo.swift */,
 				17FB4A8F2B10FF7F008C68FE /* ViewHeader.swift */,
+				17FB4A912B110191008C68FE /* SearchBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -337,6 +342,9 @@
 			dependencies = (
 			);
 			name = "Twitter Clone";
+			packageProductDependencies = (
+				17FB4A942B1201B4008C68FE /* PagerTabStripView */,
+			);
 			productName = "Twitter Clone";
 			productReference = 1763E8CC2B0BDA6600F38915 /* Twitter Clone.app */;
 			productType = "com.apple.product-type.application";
@@ -365,6 +373,9 @@
 				Base,
 			);
 			mainGroup = 1763E8C32B0BDA6600F38915;
+			packageReferences = (
+				17FB4A932B1201B4008C68FE /* XCRemoteSwiftPackageReference "PagerTabStripView" */,
+			);
 			productRefGroup = 1763E8CD2B0BDA6600F38915 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -391,6 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17FB4A922B110191008C68FE /* SearchBar.swift in Sources */,
 				1711D2802B0FAB57005253EC /* SignUpView.swift in Sources */,
 				17FB4A882B10F3C8008C68FE /* NotificationsView.swift in Sources */,
 				17FB4A762B10AED4008C68FE /* FeedScreen.swift in Sources */,
@@ -606,6 +618,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		17FB4A932B1201B4008C68FE /* XCRemoteSwiftPackageReference "PagerTabStripView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/xmartlabs/PagerTabStripView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		17FB4A942B1201B4008C68FE /* PagerTabStripView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17FB4A932B1201B4008C68FE /* XCRemoteSwiftPackageReference "PagerTabStripView" */;
+			productName = PagerTabStripView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1763E8C42B0BDA6600F38915 /* Project object */;
 }

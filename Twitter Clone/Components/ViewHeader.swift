@@ -10,7 +10,7 @@ import SwiftUI
 struct ViewHeader: View {
     //params for this component
     var view : String
-
+    @State var searchText : String = ""
     var body: some View {
         ZStack{
             //avatar image
@@ -20,7 +20,7 @@ struct ViewHeader: View {
                         .resizable()
                         .frame(width:32,height: 32)
                         .cornerRadius(99)
-                      
+                    
                 } else if phase.error != nil {
                     Color.red // Indicates an error.
                 } else {
@@ -28,7 +28,7 @@ struct ViewHeader: View {
                 }
             }
             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)// Displays the loaded image.
-               
+            
             Spacer()
             //based on the view we are gonna render different hero element/s
             switch view{
@@ -36,12 +36,18 @@ struct ViewHeader: View {
                 //twitter logo
                 TwitterLogo(frameWidth: 27, paddingTop: 0)
             case "search":
-                Text("search input")
+                SearchBar(searchText: $searchText)
+            case "community":
+                Text("Communities")
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+            case "notification":
+                Text("Notification")
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
             default:
                 //twitter logo
                 TwitterLogo(frameWidth: 27, paddingTop: 0)
             }
-           
+            
             Spacer()
             //icon
             Image(systemName: "gearshape")
@@ -50,11 +56,30 @@ struct ViewHeader: View {
                 .imageScale(.large)
         }
         .padding(.top, 10)
+        .padding(.bottom, 10)
         .padding(.leading, 10)
         .padding(.trailing, 10)
+    
+            switch view {
+            case "search":
+                Text("Trends for you")
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                    .padding(.leading, 10)
+                    .font(.title3)
+                    .fontWeight(.bold)
+            case "community":
+                Text("Discover new communities")
+                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+                    .padding(.leading, 10)
+                    .font(.title3)
+                    .fontWeight(.bold)
+                
+            default:
+                Text("default")
+            }
     }
 }
 
 #Preview {
-    ViewHeader(view: "search")
+    ViewHeader(view: "community")
 }

@@ -9,7 +9,15 @@ import SwiftUI
 
 struct SearchView: View {
     var body: some View {
-        Text("Search View")
+        VStack(alignment: .center) {
+            //header
+            ViewHeader(view: "search")
+            Divider()
+            //feed posts
+            ScrollView{
+                Text("Search view")
+            }
+        }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }
 }
 
