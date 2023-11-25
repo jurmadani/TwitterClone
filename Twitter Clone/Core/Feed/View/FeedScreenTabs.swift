@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import PagerTabStripView
 
 struct FeedScreenTabs: View {
     @State var currentTab: Int = 0

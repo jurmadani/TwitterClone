@@ -29,6 +29,7 @@
 		17FB4AA02B1210F8008C68FE /* AllNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB4A9F2B1210F8008C68FE /* AllNotificationsView.swift */; };
 		17FB4AA22B121136008C68FE /* VerifiedNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB4AA12B121135008C68FE /* VerifiedNotificationsView.swift */; };
 		17FB4AA42B12114B008C68FE /* MentionNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB4AA32B12114B008C68FE /* MentionNotificationsView.swift */; };
+		17FB4AA72B121517008C68FE /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB4AA62B121517008C68FE /* SplashView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		17FB4A9F2B1210F8008C68FE /* AllNotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNotificationsView.swift; sourceTree = "<group>"; };
 		17FB4AA12B121135008C68FE /* VerifiedNotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifiedNotificationsView.swift; sourceTree = "<group>"; };
 		17FB4AA32B12114B008C68FE /* MentionNotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentionNotificationsView.swift; sourceTree = "<group>"; };
+		17FB4AA62B121517008C68FE /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		17085E9C2B0E639200B3D092 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				17FB4AA52B121508008C68FE /* Splash */,
 				17FB4A8A2B10F412008C68FE /* Messages */,
 				17FB4A842B10F3AE008C68FE /* Notifications */,
 				17FB4A7F2B10F330008C68FE /* Community */,
@@ -345,6 +348,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		17FB4AA52B121508008C68FE /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				17FB4AA62B121517008C68FE /* SplashView.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -439,6 +450,7 @@
 				17FB4A792B10F1C2008C68FE /* TabView.swift in Sources */,
 				17FB4A742B10AB81008C68FE /* TwitterLogo.swift in Sources */,
 				1763E8D02B0BDA6600F38915 /* Twitter_CloneApp.swift in Sources */,
+				17FB4AA72B121517008C68FE /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
