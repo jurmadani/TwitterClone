@@ -43,6 +43,9 @@ struct ViewHeader: View {
             case "notification":
                 Text("Notification")
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+            case "messages":
+                Text("Messages")
+                    .fontWeight(.bold)
             default:
                 //twitter logo
                 TwitterLogo(frameWidth: 27, paddingTop: 0)
@@ -75,13 +78,14 @@ struct ViewHeader: View {
                     .padding(.leading, 10)
                     .font(.title3)
                     .fontWeight(.bold)
-                
+            case "notification":
+                NotificationsScreenTabs()
             default:
-                Text("default")
+                Text("")
             }
     }
 }
 
 #Preview {
-    ViewHeader(view: "feed")
+    ViewHeader(view: "messages")
 }

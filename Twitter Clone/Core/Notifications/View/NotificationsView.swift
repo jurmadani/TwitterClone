@@ -9,7 +9,11 @@ import SwiftUI
 
 struct NotificationsView: View {
     var body: some View {
-        Text("Notifications View")
+        VStack(alignment: .center) {
+            //header
+            ViewHeader(view: "notification")
+            Divider()
+        }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }
 }
 

@@ -9,7 +9,15 @@ import SwiftUI
 
 struct MessagesView: View {
     var body: some View {
-        Text("Messages View")
+        VStack(alignment: .center) {
+            //header
+            ViewHeader(view: "messages")
+            Divider()
+            //messages posts
+            ScrollView{
+                Text("messages view")
+            }
+        }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }
 }
 
