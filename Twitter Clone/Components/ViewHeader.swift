@@ -61,6 +61,8 @@ struct ViewHeader: View {
         .padding(.trailing, 10)
     
             switch view {
+            case "feed":
+                FeedScreenTabs()
             case "search":
                 Text("Trends for you")
                     .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
@@ -81,5 +83,5 @@ struct ViewHeader: View {
 }
 
 #Preview {
-    ViewHeader(view: "community")
+    ViewHeader(view: "feed")
 }

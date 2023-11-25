@@ -14,9 +14,6 @@ struct FeedScreen: View {
             ViewHeader(view: "feed")
             Divider()
             //feed posts
-            ScrollView{
-                Text("Feed postsss")
-            }
         }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }
 }
