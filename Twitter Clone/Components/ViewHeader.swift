@@ -57,11 +57,15 @@ struct ViewHeader: View {
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 .foregroundColor(Color(UIColor(red: 29/255, green: 161/255, blue: 242/255, alpha: 1.0)))
                 .imageScale(.large)
+          
         }
         .padding(.top, 10)
         .padding(.bottom, 10)
         .padding(.leading, 10)
         .padding(.trailing, 10)
+
+        
+       
     
             switch view {
             case "feed":
@@ -87,5 +91,5 @@ struct ViewHeader: View {
 }
 
 #Preview {
-    ViewHeader(view: "messages")
+    ViewHeader(view: "feed")
 }

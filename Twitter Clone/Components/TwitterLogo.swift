@@ -11,11 +11,14 @@ struct TwitterLogo: View {
     var frameWidth : CGFloat
     var paddingTop : CGFloat
     var body: some View {
+        
         Image("TwitterLogo")
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: frameWidth)
             .padding(.top, paddingTop)
+          
+      
     }
 }
 
