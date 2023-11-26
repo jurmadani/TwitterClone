@@ -9,7 +9,15 @@ import SwiftUI
 
 struct ForYouFeedView: View {
     var body: some View {
-        Text("For you feed view")
+        //loop through mock data and display posts
+        ScrollView{
+           // Divider()
+            ForEach(mockData, id: \.postId) { post in
+                PostViewModel(post: post)
+                Divider()
+            }
+        }
+        .padding(.top, 50)
     }
 }
 
