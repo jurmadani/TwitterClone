@@ -29,8 +29,8 @@
 		17FB4AA02B1210F8008C68FE /* AllNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB4A9F2B1210F8008C68FE /* AllNotificationsView.swift */; };
 		17FB4AA22B121136008C68FE /* VerifiedNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB4AA12B121135008C68FE /* VerifiedNotificationsView.swift */; };
 		17FB4AA42B12114B008C68FE /* MentionNotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB4AA32B12114B008C68FE /* MentionNotificationsView.swift */; };
-		17FB4AAA2B122FEC008C68FE /* SlideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB4AA92B122FEC008C68FE /* SlideMenuView.swift */; };
 		17FB4AA72B121517008C68FE /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB4AA62B121517008C68FE /* SplashView.swift */; };
+		17FB4AAA2B122FEC008C68FE /* SlideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB4AA92B122FEC008C68FE /* SlideMenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,8 +57,8 @@
 		17FB4A9F2B1210F8008C68FE /* AllNotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNotificationsView.swift; sourceTree = "<group>"; };
 		17FB4AA12B121135008C68FE /* VerifiedNotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifiedNotificationsView.swift; sourceTree = "<group>"; };
 		17FB4AA32B12114B008C68FE /* MentionNotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentionNotificationsView.swift; sourceTree = "<group>"; };
-		17FB4AA92B122FEC008C68FE /* SlideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuView.swift; sourceTree = "<group>"; };
 		17FB4AA62B121517008C68FE /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		17FB4AA92B122FEC008C68FE /* SlideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -351,18 +351,20 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		17FB4AA82B122EE0008C68FE /* SlideMenu */ = {
-			isa = PBXGroup;
-			children = (
-				17FB4AA92B122FEC008C68FE /* SlideMenuView.swift */,
-			);
-			path = SlideMenu;
 		17FB4AA52B121508008C68FE /* Splash */ = {
 			isa = PBXGroup;
 			children = (
 				17FB4AA62B121517008C68FE /* SplashView.swift */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		17FB4AA82B122EE0008C68FE /* SlideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				17FB4AA92B122FEC008C68FE /* SlideMenuView.swift */,
+			);
+			path = SlideMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -594,6 +596,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Twitter Clone/Preview Content\"";
+				DEVELOPMENT_TEAM = TPN9G79RD8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -622,6 +625,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Twitter Clone/Preview Content\"";
+				DEVELOPMENT_TEAM = TPN9G79RD8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

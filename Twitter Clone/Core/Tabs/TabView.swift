@@ -15,10 +15,7 @@ struct TabNavigationView: View {
     //offsets
     @State var offset : CGFloat = 0
     @State var lastStoredOffset: CGFloat = 0
-    
-    //gesture offset
-    @GestureState var gestureOffset : CGFloat = 0
-    
+        
     var body: some View {
         
         let sideBarWidth = getRect().width - 90;
@@ -61,7 +58,7 @@ struct TabNavigationView: View {
                         .fill(
                             Color.primary
                                 .opacity(Double((offset / sideBarWidth) / 5))
-                            )
+                        )
                         .ignoresSafeArea(.container, edges: .vertical)
                         .onTapGesture{
                             withAnimation{
@@ -73,18 +70,10 @@ struct TabNavigationView: View {
             .frame(width: getRect().width + sideBarWidth)
             .offset(x: -sideBarWidth / 2)
             .offset(x: offset > 0 ? offset : 0)
-            //gesture
-            .gesture(
-                DragGesture()
-                    .updating($gestureOffset, body: {
-                        value, out, _ in
-                        out = value.translation.width
-                    })
-                    .onEnded(onEnd(value:))
-            )
         }
+        
         .animation(.bouncy, value: offset == 0)
-        .onChange(of: showMenu, perform: {  newValue in
+        .onChange(of: showMenu) { newValue in
             if showMenu && offset == 0 {
                 offset = sideBarWidth
             }
@@ -93,20 +82,8 @@ struct TabNavigationView: View {
                 offset = 0
                 lastStoredOffset = 0
             }
-        })
-        .onChange(of: gestureOffset, perform: { newValue in
-            OnChange()
-        })
-              
-    }
-    
-    func OnChange(){
-        let sideBarWidth = getRect().width - 90
-        
-        offset = (gestureOffset != 0) ? (gestureOffset < sideBarWidth ? gestureOffset : offset) : offset
-    }
-    
-    func onEnd(value : DragGesture.Value){
+        }
+
         
     }
 }
