@@ -66,10 +66,12 @@ struct TabNavigationView: View {
                             }
                         }
                 )
+                
             }
             .frame(width: getRect().width + sideBarWidth)
             .offset(x: -sideBarWidth / 2)
             .offset(x: offset > 0 ? offset : 0)
+            
         }
         
         .animation(.bouncy, value: offset == 0)

@@ -9,7 +9,14 @@ import SwiftUI
 
 struct FollowingFeedView: View {
     var body: some View {
-        Text("Following feed view!")
+        ScrollView{
+           // Divider()
+            ForEach(mockData[1...3], id: \.postId) { post in
+                PostViewModel(post: post)
+                Divider()
+            }
+        }
+        .padding(.top, 50)
     }
 }
 
