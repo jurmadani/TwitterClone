@@ -11,8 +11,12 @@ struct ViewHeader: View {
     //params for this component
     var view : String
     @State var searchText : String = ""
+    @Binding var showMenu : Bool
+
     var body: some View {
+        
         ZStack{
+            
             //avatar image
             AsyncImage(url: URL(string: "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png")) { phase in
                 if let image = phase.image {
@@ -28,6 +32,11 @@ struct ViewHeader: View {
                 }
             }
             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)// Displays the loaded image.
+            .onTapGesture {
+                withAnimation{
+                    showMenu.toggle()
+                }
+            }
             
             Spacer()
             //based on the view we are gonna render different hero element/s
@@ -90,6 +99,6 @@ struct ViewHeader: View {
     }
 }
 
-#Preview {
-    ViewHeader(view: "feed")
-}
+//#Preview {
+//    ViewHeader(view: "search")
+//}

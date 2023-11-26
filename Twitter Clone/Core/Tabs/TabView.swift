@@ -9,36 +9,105 @@ import SwiftUI
 
 
 struct TabNavigationView: View {
+    
+    @State var showMenu : Bool = false
+    
+    //offsets
+    @State var offset : CGFloat = 0
+    @State var lastStoredOffset: CGFloat = 0
+    
+    //gesture offset
+    @GestureState var gestureOffset : CGFloat = 0
+    
     var body: some View {
         
-        TabView {
-            FeedScreen()
-                .tabItem {
-                    Image(systemName: "house")
+        let sideBarWidth = getRect().width - 90;
+        
+        
+        NavigationStack{
+            HStack(spacing: -90){
+                //Side menu
+                SlideMenuView(showMenu: $showMenu)
+                
+                //tab view
+                TabView {
+                    FeedScreen(showMenu: $showMenu)
+                        .tabItem {
+                            Image(systemName: "house")
+                        }
+                    
+                    SearchView(showMenu: $showMenu)
+                        .tabItem {
+                            Image(systemName: "magnifyingglass")
+                        }
+                    
+                    CommunityView(showMenu: $showMenu)
+                        .tabItem {
+                            Image(systemName: "person.2.fill")
+                        }
+                    
+                    NotificationsView(showMenu: $showMenu)
+                        .tabItem {
+                            Image(systemName: "bell")
+                        }
+                    
+                    MessagesView(showMenu: $showMenu)
+                        .tabItem {
+                            Image(systemName: "envelope")
+                        }
                 }
-            
-            SearchView()
-                .tabItem {
-                    Image(systemName: "magnifyingglass")
-                }
-           
-            CommunityView()
-                .tabItem {
-                    Image(systemName: "person.2.fill")
-                }
-            
-            NotificationsView()
-                .tabItem {
-                    Image(systemName: "bell")
-                }
-            
-            
-            MessagesView()
-                .tabItem {
-                    Image(systemName: "envelope")
-                }
-            
+                .overlay(
+                    Rectangle()
+                        .fill(
+                            Color.primary
+                                .opacity(Double((offset / sideBarWidth) / 5))
+                            )
+                        .ignoresSafeArea(.container, edges: .vertical)
+                        .onTapGesture{
+                            withAnimation{
+                                showMenu.toggle()
+                            }
+                        }
+                )
+            }
+            .frame(width: getRect().width + sideBarWidth)
+            .offset(x: -sideBarWidth / 2)
+            .offset(x: offset > 0 ? offset : 0)
+            //gesture
+            .gesture(
+                DragGesture()
+                    .updating($gestureOffset, body: {
+                        value, out, _ in
+                        out = value.translation.width
+                    })
+                    .onEnded(onEnd(value:))
+            )
         }
+        .animation(.bouncy, value: offset == 0)
+        .onChange(of: showMenu, perform: {  newValue in
+            if showMenu && offset == 0 {
+                offset = sideBarWidth
+            }
+            
+            if !showMenu && offset == sideBarWidth {
+                offset = 0
+                lastStoredOffset = 0
+            }
+        })
+        .onChange(of: gestureOffset, perform: { newValue in
+            OnChange()
+        })
+              
+    }
+    
+    func OnChange(){
+        let sideBarWidth = getRect().width - 90
+        
+        offset = (gestureOffset != 0) ? (gestureOffset < sideBarWidth ? gestureOffset : offset) : offset
+    }
+    
+    func onEnd(value : DragGesture.Value){
+        
     }
 }
 

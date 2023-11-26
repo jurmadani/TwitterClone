@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct NotificationsView: View {
+    
+    @Binding var showMenu : Bool
+    
     var body: some View {
         VStack(alignment: .center) {
             //header
-            ViewHeader(view: "notification")
+            ViewHeader(view: "notification", showMenu: $showMenu)
             Divider()
         }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }
 }
 
-#Preview {
-    NotificationsView()
-}
+//#Preview {
+//    NotificationsView()
+//}

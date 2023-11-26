@@ -8,18 +8,19 @@
 import SwiftUI
 
 struct FeedScreen: View {
+    @Binding var showMenu: Bool
+    
     var body: some View {
         VStack(alignment: .center) {
             //header
-            ViewHeader(view: "feed")
-            Divider()
-            //feed posts
+            ViewHeader(view: "feed", showMenu: $showMenu)
+
         }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }
 }
 
 
-#Preview {
-    FeedScreen()
-}
+//#Preview {
+//    FeedScreen()
+//}
 

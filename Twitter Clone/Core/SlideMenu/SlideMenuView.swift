@@ -10,6 +10,7 @@ import SwiftUI
 struct SlideMenuView: View {
     
     @State private var appearanceTheme = false
+    @Binding var showMenu : Bool
     
     var body: some View {
        
@@ -163,6 +164,6 @@ extension View {
     }
 }
 
-#Preview {
-    SlideMenuView()
-}
+//#Preview {
+//    SlideMenuView()
+//}

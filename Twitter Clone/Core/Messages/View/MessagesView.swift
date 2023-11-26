@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct MessagesView: View {
+    
+    @Binding var showMenu : Bool
+    
     var body: some View {
         VStack(alignment: .center) {
             //header
-            ViewHeader(view: "messages")
+            ViewHeader(view: "messages", showMenu: $showMenu)
             Divider()
             //messages posts
             ScrollView{
@@ -21,6 +24,6 @@ struct MessagesView: View {
     }
 }
 
-#Preview {
-    MessagesView()
-}
+//#Preview {
+//    MessagesView()
+//}

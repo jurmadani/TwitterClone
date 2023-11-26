@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct SearchView: View {
+    
+    @Binding var showMenu : Bool
+    
     var body: some View {
         VStack(alignment: .center) {
             //header
-            ViewHeader(view: "search")
+            ViewHeader(view: "search", showMenu: $showMenu)
             Divider()
             //feed posts
             ScrollView{
@@ -21,6 +24,6 @@ struct SearchView: View {
     }
 }
 
-#Preview {
-    SearchView()
-}
+//#Preview {
+//    SearchView()
+//}
