@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		17085EAA2B0E652000B3D092 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17085EA92B0E652000B3D092 /* SignInView.swift */; };
 		1711D2802B0FAB57005253EC /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1711D27F2B0FAB56005253EC /* SignUpView.swift */; };
+		17179A862B14EFC9002CF04C /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17179A852B14EFC9002CF04C /* BlurView.swift */; };
 		1725D76B2B137ECB00BC0813 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1725D76A2B137ECB00BC0813 /* PostModel.swift */; };
 		1725D76D2B137F2400BC0813 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1725D76C2B137F2400BC0813 /* UserModel.swift */; };
 		1725D76F2B137F3000BC0813 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1725D76E2B137F3000BC0813 /* CommentModel.swift */; };
@@ -19,6 +20,7 @@
 		1763E8D42B0BDA6700F38915 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1763E8D32B0BDA6700F38915 /* Assets.xcassets */; };
 		1763E8D72B0BDA6700F38915 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1763E8D62B0BDA6700F38915 /* Preview Assets.xcassets */; };
 		17ABFEB12B14ABB700C02615 /* ScrollViewReaderFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17ABFEB02B14ABB700C02615 /* ScrollViewReaderFeed.swift */; };
+		17ABFEB72B14B0C200C02615 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17ABFEB62B14B0C200C02615 /* ProfileView.swift */; };
 		17FB4A742B10AB81008C68FE /* TwitterLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB4A732B10AB81008C68FE /* TwitterLogo.swift */; };
 		17FB4A762B10AED4008C68FE /* FeedScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB4A752B10AED4008C68FE /* FeedScreen.swift */; };
 		17FB4A792B10F1C2008C68FE /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FB4A782B10F1C2008C68FE /* TabView.swift */; };
@@ -42,6 +44,7 @@
 /* Begin PBXFileReference section */
 		17085EA92B0E652000B3D092 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		1711D27F2B0FAB56005253EC /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		17179A852B14EFC9002CF04C /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		1725D76A2B137ECB00BC0813 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		1725D76C2B137F2400BC0813 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		1725D76E2B137F3000BC0813 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
@@ -53,6 +56,7 @@
 		1763E8D32B0BDA6700F38915 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1763E8D62B0BDA6700F38915 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		17ABFEB02B14ABB700C02615 /* ScrollViewReaderFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewReaderFeed.swift; sourceTree = "<group>"; };
+		17ABFEB62B14B0C200C02615 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		17FB4A732B10AB81008C68FE /* TwitterLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterLogo.swift; sourceTree = "<group>"; };
 		17FB4A752B10AED4008C68FE /* FeedScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedScreen.swift; sourceTree = "<group>"; };
 		17FB4A782B10F1C2008C68FE /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 		17085E9C2B0E639200B3D092 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				17ABFEB22B14B09D00C02615 /* Profile */,
 				17FB4AA82B122EE0008C68FE /* SlideMenu */,
 				17FB4AA52B121508008C68FE /* Splash */,
 				17FB4A8A2B10F412008C68FE /* Messages */,
@@ -265,6 +270,31 @@
 				17FB4A8F2B10FF7F008C68FE /* ViewHeader.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		17ABFEB22B14B09D00C02615 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				17ABFEB42B14B0AC00C02615 /* ViewModel */,
+				17ABFEB32B14B0A800C02615 /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		17ABFEB32B14B0A800C02615 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				17ABFEB62B14B0C200C02615 /* ProfileView.swift */,
+				17179A852B14EFC9002CF04C /* BlurView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		17ABFEB42B14B0AC00C02615 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		17FB4A772B10F1B5008C68FE /* Tabs */ = {
@@ -478,11 +508,13 @@
 				17FB4A882B10F3C8008C68FE /* NotificationsView.swift in Sources */,
 				17FB4A762B10AED4008C68FE /* FeedScreen.swift in Sources */,
 				17085EAA2B0E652000B3D092 /* SignInView.swift in Sources */,
+				17ABFEB72B14B0C200C02615 /* ProfileView.swift in Sources */,
 				17FB4AA42B12114B008C68FE /* MentionNotificationsView.swift in Sources */,
 				1725D76D2B137F2400BC0813 /* UserModel.swift in Sources */,
 				17FB4A982B12027F008C68FE /* FeedScreenTabs.swift in Sources */,
 				1763E8D22B0BDA6600F38915 /* ContentView.swift in Sources */,
 				17FB4AA22B121136008C68FE /* VerifiedNotificationsView.swift in Sources */,
+				17179A862B14EFC9002CF04C /* BlurView.swift in Sources */,
 				1725D7732B13879800BC0813 /* PostViewModel.swift in Sources */,
 				17FB4A7E2B10F301008C68FE /* SearchView.swift in Sources */,
 				17FB4A832B10F355008C68FE /* CommunityView.swift in Sources */,
