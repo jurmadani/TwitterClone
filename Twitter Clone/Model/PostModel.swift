@@ -85,7 +85,7 @@ let comment12 = CommentModel(commentId: "112", author: user1, text: "Beautiful v
 
 let post6 = PostModel(postId: "206", author: user3, content: "Learning a new language.", timestamp: Date().addingTimeInterval(-93420), likes: 7, comments: [comment11, comment12], retweets: [], views: 250)
 
-let mockData: [PostModel] = [post1, post2, post3, post4, post5, post6]
+let mockData: [PostModel] = [post1, post2, post3, post4, post5, post6, post1, post2, post3, post4 ,post5, post6]
 
 
 // Add more users, comments, and posts as needed for your mock data

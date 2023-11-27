@@ -8,19 +8,12 @@
 import SwiftUI
 
 struct ForYouFeedView: View {
+    
     var body: some View {
         //loop through mock data and display posts
-        ScrollView{
-           // Divider()
-            ForEach(mockData, id: \.postId) { post in
-                PostViewModel(post: post)
-                Divider()
-            }
-        }
-        .padding(.top, 50)
+        ScrollViewReaderFeed(mockData: ArraySlice(mockData), sliceArray: false)
     }
 }
-
 #Preview {
     ForYouFeedView()
 }
