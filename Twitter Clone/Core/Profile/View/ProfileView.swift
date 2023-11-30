@@ -14,6 +14,64 @@ struct ProfileView: View {
     //Dark mode
     @Environment(\.colorScheme) var colorScheme
     
+    @State var currentTab = "Tweets"
+    
+    //smooth slide animation
+    @Namespace var animation
+    
+    @State var titleHeaderOffset: CGFloat = 0
+    
+    @State private var fadeInOpacity: Double = 0.0
+    
+    //Profile shrinking effect...
+    private func getOffset() -> CGFloat{
+        
+        let progress = (-offset / 50) * 20
+        
+        return progress <= 20 ? progress : 20
+        
+    }
+    
+    private func getScale() -> CGFloat{
+        
+        let progress = -offset / 50
+        
+        let scale = 1.8 - (progress < 1.0 ? progress : 1)
+        
+        return scale < 1 ? scale : 1
+    }
+    
+    private func blurViewOpacityNegativeY() -> Double {
+        
+        let progress = -(offset + 50) / 120
+        
+        return Double(-offset > 50 ? progress : 0)
+    }
+    
+    private func blurViewOpacityPositiveY() -> Double {
+        
+        let progress = (offset + 30) / 120
+        
+        return Double(offset > 0 ? progress : 0)
+    }
+    
+    private func calculateOffset() -> CGFloat {
+        let easeInThreshold: CGFloat = 170
+        let maxOffset: CGFloat = 50
+        let startingOffset: CGFloat = 100
+        
+        guard -offset >= easeInThreshold else {
+            return startingOffset // Default offset when not easing in
+        }
+        
+        let normalizedOffset = max(0, min(1, (-offset - easeInThreshold) / (easeInThreshold - 142)))
+        let easedOffset = maxOffset * (1 - pow(1 - normalizedOffset, 3)) // Cubic ease-in function
+        
+        return startingOffset - min(easedOffset, maxOffset)
+    }
+    
+    
+    
     var body: some View {
         
         ScrollView(.vertical, showsIndicators: false, content: {
@@ -43,6 +101,25 @@ struct ProfileView: View {
                                 .opacity(blurViewOpacityNegativeY())}
                             else {BlurView()
                                 .opacity(blurViewOpacityPositiveY())}
+                            
+                            
+                            //Title view
+                            VStack(alignment: .leading, spacing: -1){
+                                
+                                Text("Elon Musk")
+                                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                                    .foregroundColor(.white)
+                                
+                                
+                                Text("34.154 posts")
+                                    .foregroundColor(.white)
+                                
+                            }
+                            .opacity((offset >= 0 || (-offset >= 0 && -offset <= 170)) ? 0 : (((-offset - 170) / 20) * 20) * 0.05)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.leading, 60)
+                            .offset(y: calculateOffset())
+                            
                             
                             
                             HStack {
@@ -94,21 +171,15 @@ struct ProfileView: View {
                             .position(x: getRect().width / 2, y: 90)
                             .offset(y: -minY > 0 ? (-minY > 22 ? 22 : -minY + 1) : 0)
                             
+                            
                         }
                         //stretchy header
                             .frame(height: minY > 0 ? 150 + minY : nil)
                             .offset(y: minY > 0 ? -minY : -minY < 50 ? 0 : -minY - 50)
-                        
-                        
                     )
-                    
-                    
-                    
                 }
                 .frame(height: 150)
                 .zIndex(1)
-                
-                
                 
                 //Profile image...
                 VStack (spacing: -5){
@@ -120,7 +191,7 @@ struct ProfileView: View {
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 75, height: 75)
                             .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                            .padding(8)
+                            .padding(5)
                             .background(colorScheme == .dark ? Color.black : Color.white)
                             .clipShape(Circle())
                             .offset(y: offset < 0 ? getOffset() - 20 : -20)
@@ -246,6 +317,19 @@ struct ProfileView: View {
                         
                     }
                     
+                    //custom segmented menu
+                    CustomTabsBar(currentTab: $currentTab, animation: animation)
+                    
+                    VStack{
+                        ForEach(profileTweetsMockData, id: \.postId) { post in
+                            ProfilePostViewModel(post: post)
+                            Divider()
+                        }
+                    }
+                    .animation(.bouncy)
+                    .padding(.top, 25)
+                    .zIndex(0)
+                    
                 }
                 .padding(.horizontal)
                 .zIndex(-offset > 50 ? 0 : 1)
@@ -255,41 +339,10 @@ struct ProfileView: View {
         .ignoresSafeArea(.all, edges: .top)
     }
     
-    //Profile shrinking effect...
-    func getOffset() -> CGFloat{
-        
-        let progress = (-offset / 50) * 20
-        
-        return progress <= 20 ? progress : 20
-        
-    }
     
-    func getScale() -> CGFloat{
-        
-        let progress = -offset / 50
-        
-        let scale = 1.8 - (progress < 1.0 ? progress : 1)
-        
-        return scale < 1 ? scale : 1
-    }
-    
-    func blurViewOpacityNegativeY() -> Double {
-        
-        let progress = -(offset + 50) / 120
-        
-        return Double(-offset > 50 ? progress : 0)
-    }
-    
-    func blurViewOpacityPositiveY() -> Double {
-        
-        let progress = (offset + 30) / 120
-        
-        return Double(offset > 0 ? progress : 0)
-    }
     
 }
 
 #Preview {
     ProfileView()
 }
-

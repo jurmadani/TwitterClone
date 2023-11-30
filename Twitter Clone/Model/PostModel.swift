@@ -16,8 +16,9 @@ final class PostModel {
     var comments: [CommentModel]
     var retweets : [RetweetModel]
     var views : Int
+    let postImage: String?
     
-    init(postId: String, author: UserModel, content: String, timestamp: Date, likes: Int, comments: [CommentModel], retweets : [RetweetModel], views : Int) {
+    init(postId: String, author: UserModel, content: String, timestamp: Date, likes: Int, comments: [CommentModel], retweets : [RetweetModel], views : Int, postImage: String?) {
         self.postId = postId
         self.author = author
         self.content = content
@@ -26,6 +27,7 @@ final class PostModel {
         self.comments = comments
         self.retweets = retweets
         self.views = views
+        self.postImage = postImage
     }
     
     // Computed property to calculate relative timestamp
@@ -58,35 +60,46 @@ let user3 = UserModel(userId: "3", username: "bob_jones", fullName: "Bob Jones")
 let comment1 = CommentModel(commentId: "101", author: user2, text: "Great post!", timestamp: Date().addingTimeInterval(-600))
 let comment2 = CommentModel(commentId: "102", author: user1, text: "Thanks!", timestamp: Date().addingTimeInterval(-540))
 
-let post1 = PostModel(postId: "201", author: user1, content: "Hello, World!", timestamp: Date().addingTimeInterval(-480), likes: 5, comments: [comment1, comment2], retweets: [], views: 100)
+let post1 = PostModel(postId: "201", author: user1, content: "Hello, World!", timestamp: Date().addingTimeInterval(-480), likes: 5, comments: [comment1, comment2], retweets: [], views: 100, postImage: nil)
 
 let comment3 = CommentModel(commentId: "103", author: user1, text: "Awesome!", timestamp: Date().addingTimeInterval(-420))
 let comment4 = CommentModel(commentId: "104", author: user2, text: "Keep it up!", timestamp: Date().addingTimeInterval(-360))
 
-let post2 = PostModel(postId: "202", author: user2, content: "Just finished a great book!", timestamp: Date().addingTimeInterval(-300), likes: 8, comments: [comment3, comment4], retweets: [], views: 150)
+let post2 = PostModel(postId: "202", author: user2, content: "Just finished a great book!", timestamp: Date().addingTimeInterval(-300), likes: 8, comments: [comment3, comment4], retweets: [], views: 150, postImage: nil)
 
 let comment5 = CommentModel(commentId: "105", author: user3, text: "Nice one!", timestamp: Date().addingTimeInterval(-240))
 let comment6 = CommentModel(commentId: "106", author: user1, text: "I love this!", timestamp: Date().addingTimeInterval(-180))
 
-let post3 = PostModel(postId: "203", author: user3, content: "Excited for the weekend! 🎉", timestamp: Date().addingTimeInterval(-120), likes: 10, comments: [comment5, comment6], retweets: [], views: 120)
+let post3 = PostModel(postId: "203", author: user3, content: "Excited for the weekend! 🎉", timestamp: Date().addingTimeInterval(-120), likes: 10, comments: [comment5, comment6], retweets: [], views: 120, postImage: nil)
 
 let comment7 = CommentModel(commentId: "107", author: user2, text: "Amazing content!", timestamp: Date().addingTimeInterval(-60))
 let comment8 = CommentModel(commentId: "108", author: user3, text: "I agree!", timestamp: Date())
 
-let post4 = PostModel(postId: "204", author: user1, content: "Exploring new places.", timestamp: Date().addingTimeInterval(60), likes: 6, comments: [comment7, comment8], retweets: [], views: 200)
+let post4 = PostModel(postId: "204", author: user1, content: "Exploring new places.", timestamp: Date().addingTimeInterval(60), likes: 6, comments: [comment7, comment8], retweets: [], views: 200, postImage: nil)
 
 let comment9 = CommentModel(commentId: "109", author: user1, text: "Coding all night!", timestamp: Date().addingTimeInterval(120))
 let comment10 = CommentModel(commentId: "110", author: user2, text: "Impressive!", timestamp: Date().addingTimeInterval(180))
 
-let post5 = PostModel(postId: "205", author: user2, content: "Coffee and code.", timestamp: Date().addingTimeInterval(-1240), likes: 12, comments: [comment9, comment10], retweets: [], views: 180)
+let post5 = PostModel(postId: "205", author: user2, content: "Coffee and code.", timestamp: Date().addingTimeInterval(-1240), likes: 12, comments: [comment9, comment10], retweets: [], views: 180, postImage: nil)
 
 let comment11 = CommentModel(commentId: "111", author: user3, text: "Hiking in the mountains.", timestamp: Date().addingTimeInterval(300))
 let comment12 = CommentModel(commentId: "112", author: user1, text: "Beautiful view!", timestamp: Date().addingTimeInterval(360))
 
-let post6 = PostModel(postId: "206", author: user3, content: "Learning a new language.", timestamp: Date().addingTimeInterval(-93420), likes: 7, comments: [comment11, comment12], retweets: [], views: 250)
+let post6 = PostModel(postId: "206", author: user3, content: "Learning a new language.", timestamp: Date().addingTimeInterval(-93420), likes: 7, comments: [comment11, comment12], retweets: [], views: 250, postImage: nil)
 
 let mockData: [PostModel] = [post1, post2, post3, post4, post5, post6, post1, post2, post3, post4 ,post5, post6]
 
+
+//profile own tweets mock data
+let user4 = UserModel(userId: "4", username: "elonmusk", fullName: "Elon Musk")
+let post7 = PostModel(postId: "4234", author: user3, content: "My brand new tesla!", timestamp: Date().addingTimeInterval(-93420), likes: 7, comments: [comment11, comment12], retweets: [], views: 4353, postImage: "MockPostImage1")
+let post8 = PostModel(postId: "123", author: user3, content: "SpaceX it's fantastic, you should try to go to the moon!", timestamp: Date().addingTimeInterval(-93420), likes: 7, comments: [comment11, comment12], retweets: [], views: 250, postImage: "MockPostImage2")
+let post9 = PostModel(postId: "867", author: user3, content: "I am a cyborg...", timestamp: Date().addingTimeInterval(-93420), likes: 7, comments: [comment11, comment12], retweets: [], views: 1243, postImage: nil)
+let post10 = PostModel(postId: "423", author: user3, content: "This platform aspires to be the best (or least bad) source of truth on the Internet", timestamp: Date().addingTimeInterval(-93420), likes: 7, comments: [comment11, comment12], retweets: [], views: 250, postImage: nil)
+let post11 = PostModel(postId: "45763", author: user3, content: "Castelul Peles, something it's weird about it...", timestamp: Date().addingTimeInterval(-93420), likes: 7, comments: [comment11, comment12], retweets: [], views: 5543, postImage: "MockPostImage3")
+let post12 = PostModel(postId: "3", author: user3, content: "You’ll soon also be paid for ads appearing when others view your profile page, approximately doubling payouts", timestamp: Date().addingTimeInterval(-93420), likes: 1237, comments: [comment11, comment12], retweets: [], views: 250, postImage: nil)
+let post13 = PostModel(postId: "645", author: user3, content: "Sharing things I'm learning through my foundation work and other interests.", timestamp: Date().addingTimeInterval(-93420), likes: 7, comments: [comment11, comment12], retweets: [], views: 250, postImage: nil)
+let profileTweetsMockData: [PostModel] = [post7, post8, post9, post10, post11, post12, post13]
 
 // Add more users, comments, and posts as needed for your mock data
 

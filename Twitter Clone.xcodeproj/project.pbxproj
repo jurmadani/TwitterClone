@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		170224AF2B164692004DD4F5 /* ProfilePostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170224AE2B164692004DD4F5 /* ProfilePostViewModel.swift */; };
 		17085EAA2B0E652000B3D092 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17085EA92B0E652000B3D092 /* SignInView.swift */; };
+		170A35AC2B190663006F4AE3 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170A35AB2B190663006F4AE3 /* TabButton.swift */; };
+		170A35AE2B1908A5006F4AE3 /* CustomTabsBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170A35AD2B1908A5006F4AE3 /* CustomTabsBar.swift */; };
 		1711D2802B0FAB57005253EC /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1711D27F2B0FAB56005253EC /* SignUpView.swift */; };
 		17179A862B14EFC9002CF04C /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17179A852B14EFC9002CF04C /* BlurView.swift */; };
 		1725D76B2B137ECB00BC0813 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1725D76A2B137ECB00BC0813 /* PostModel.swift */; };
@@ -42,7 +45,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		170224AE2B164692004DD4F5 /* ProfilePostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePostViewModel.swift; sourceTree = "<group>"; };
 		17085EA92B0E652000B3D092 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		170A35AB2B190663006F4AE3 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
+		170A35AD2B1908A5006F4AE3 /* CustomTabsBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabsBar.swift; sourceTree = "<group>"; };
 		1711D27F2B0FAB56005253EC /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		17179A852B14EFC9002CF04C /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		1725D76A2B137ECB00BC0813 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
@@ -191,6 +197,16 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		170A35AA2B19064B006F4AE3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				17179A852B14EFC9002CF04C /* BlurView.swift */,
+				170A35AB2B190663006F4AE3 /* TabButton.swift */,
+				170A35AD2B1908A5006F4AE3 /* CustomTabsBar.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		1711D27B2B0FA849005253EC /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +291,7 @@
 		17ABFEB22B14B09D00C02615 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				170A35AA2B19064B006F4AE3 /* Components */,
 				17ABFEB42B14B0AC00C02615 /* ViewModel */,
 				17ABFEB32B14B0A800C02615 /* View */,
 			);
@@ -285,7 +302,6 @@
 			isa = PBXGroup;
 			children = (
 				17ABFEB62B14B0C200C02615 /* ProfileView.swift */,
-				17179A852B14EFC9002CF04C /* BlurView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -293,6 +309,7 @@
 		17ABFEB42B14B0AC00C02615 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				170224AE2B164692004DD4F5 /* ProfilePostViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -511,6 +528,7 @@
 				17ABFEB72B14B0C200C02615 /* ProfileView.swift in Sources */,
 				17FB4AA42B12114B008C68FE /* MentionNotificationsView.swift in Sources */,
 				1725D76D2B137F2400BC0813 /* UserModel.swift in Sources */,
+				170224AF2B164692004DD4F5 /* ProfilePostViewModel.swift in Sources */,
 				17FB4A982B12027F008C68FE /* FeedScreenTabs.swift in Sources */,
 				1763E8D22B0BDA6600F38915 /* ContentView.swift in Sources */,
 				17FB4AA22B121136008C68FE /* VerifiedNotificationsView.swift in Sources */,
@@ -522,9 +540,11 @@
 				17FB4A902B10FF7F008C68FE /* ViewHeader.swift in Sources */,
 				17FB4A8E2B10F548008C68FE /* MessagesView.swift in Sources */,
 				17FB4A792B10F1C2008C68FE /* TabView.swift in Sources */,
+				170A35AE2B1908A5006F4AE3 /* CustomTabsBar.swift in Sources */,
 				17FB4A742B10AB81008C68FE /* TwitterLogo.swift in Sources */,
 				1763E8D02B0BDA6600F38915 /* Twitter_CloneApp.swift in Sources */,
 				1725D76F2B137F3000BC0813 /* CommentModel.swift in Sources */,
+				170A35AC2B190663006F4AE3 /* TabButton.swift in Sources */,
 				17FB4AAA2B122FEC008C68FE /* SlideMenuView.swift in Sources */,
 				17FB4AA72B121517008C68FE /* SplashView.swift in Sources */,
 			);
