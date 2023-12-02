@@ -83,8 +83,9 @@ struct LoginInputs: View {
 
 struct LoginButton: View {
     var body: some View {
-        Button {
-            print("Log in")
+        NavigationLink{
+            TabNavigationView()
+                .navigationBarBackButtonHidden(true)
         } label: {
             Text("Log in")
                 .fontWeight(.semibold)
@@ -94,7 +95,6 @@ struct LoginButton: View {
                 .background(Color(UIColor(red: 29/255, green: 161/255, blue: 242/255, alpha: 1.0)))
                 .cornerRadius(10)
                 .padding(.top,5)
-            
         }
     }
 }

@@ -23,6 +23,8 @@ struct ProfileView: View {
     
     @State private var fadeInOpacity: Double = 0.0
     
+    @Environment(\.presentationMode) var presentationMode
+    
     //Profile shrinking effect...
     private func getOffset() -> CGFloat{
         
@@ -125,7 +127,7 @@ struct ProfileView: View {
                             HStack {
                                 // Back button
                                 Button{
-                                    
+                                    presentationMode.wrappedValue.dismiss()
                                 } label : {
                                     Image(systemName: "arrow.left")
                                         .foregroundStyle(.white)
