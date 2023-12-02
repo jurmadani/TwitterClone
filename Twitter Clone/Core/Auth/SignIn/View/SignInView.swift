@@ -1,40 +1,39 @@
 //
-//  SignInView.swift
+//  SignUpView.swift
 //  Twitter Clone
 //
-//  Created by Daniel Jurma on 22.11.2023.
+//  Created by Daniel Jurma on 23.11.2023.
 //
 
 import SwiftUI
 
 struct SignInView: View {
+    @State private var email = ""
+    @State private var password = ""
     var body: some View {
         NavigationStack{
-            VStack {
+            
+            
+            VStack(spacing:10){
                 //twitter logo
                 TwitterLogo(frameWidth: 30, paddingTop: 15)
                 Spacer()
                 //hero text
-                Text("See what's happening in the world right now")
-                    .font(.title)
-                    .fontWeight(.heavy)
-                    .padding(.trailing,70)
-                    .frame(width: 330)
+                HeroText()
                 // buttons
-                Spacer()
                 //continue with google button
                 googleSignup()
                 //continue with apple
                 appleSignup()
                 //or separator
                 orSeparator()
-                // create account button
-                createAccountButton()
-                //text
-                signupPolicyText()
-                //Already have an account?
+                //inputs
+                LoginInputs(email: $email, password: $password)
+                //log in button
+                LoginButton()
                 Spacer()
-                alreadyHaveAnAccout()
+                //don't have an account text
+                FooterText()
                 
             }
         }
@@ -45,123 +44,69 @@ struct SignInView: View {
     SignInView()
 }
 
-struct alreadyHaveAnAccout: View {
+struct HeroText: View {
     var body: some View {
-        HStack{
-            Text("Have an account already?")
-            NavigationLink{
-                SignUpView()
-                    
-            } label: {
-                Text("Log in")
-                    .foregroundColor(Color(UIColor(red: 29/255, green: 161/255, blue: 242/255, alpha: 1.0)))
-            }
-          
-            
-        }.font(.subheadline)
+        Text("Sign in to twitter")
+            .font(.title)
+            .fontWeight(.heavy)
+            .padding(.bottom, 15)
+            .padding(.trailing,70)
     }
 }
 
-struct signupPolicyText: View {
+struct LoginInputs: View {
+    @Binding var email : String
+    @Binding var password : String
     var body: some View {
-        HStack{
-            Text("By signing up, you agree to the ") +
-            Text("Terms of Service ")
-                .foregroundColor(Color(UIColor(red: 29/255, green: 161/255, blue: 242/255, alpha: 1.0))) +
-            Text("and ") +
-            Text("Privacy Policy, ")
-                .foregroundColor(Color(UIColor(red: 29/255, green: 161/255, blue: 242/255, alpha: 1.0))) +
-            Text("including ") +
-            Text("Cookie Use.")
-                .foregroundColor(Color(UIColor(red: 29/255, green: 161/255, blue: 242/255, alpha: 1.0)))
-        }.font(.footnote)
-            .frame(width: (UIScreen.main.bounds.width) - 100, height: 50)
+        VStack{
+            TextField("Phone, email, or username", text: $email)
+                .padding()
+                .frame(width: 300)
+                .fontWeight(.semibold)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color(.systemGray3), lineWidth: 1) // Apply border with corner radius
+                )
+            SecureField("Enter your password", text: $password)
+                .padding()
+                .frame(width: 300)
+                .fontWeight(.semibold)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color(.systemGray3), lineWidth: 1) // Apply border with corner radius
+                )
+        }
     }
 }
 
-struct createAccountButton: View {
+struct LoginButton: View {
     var body: some View {
         Button {
-            print("Create account button")
+            print("Log in")
         } label: {
-            Text("Create account")
+            Text("Log in")
                 .fontWeight(.semibold)
                 .foregroundColor(.white)
                 .padding()
                 .frame(width: (UIScreen.main.bounds.width) - 100, height: 50)
                 .background(Color(UIColor(red: 29/255, green: 161/255, blue: 242/255, alpha: 1.0)))
                 .cornerRadius(10)
+                .padding(.top,5)
             
         }
     }
 }
 
-struct orSeparator: View {
+struct FooterText: View {
     var body: some View {
         HStack{
-            Rectangle()
-                .frame(width: (UIScreen.main.bounds.width / 2) - 65, height: 0.7 )
-            Text("Or")
-                .font(.footnote)
-                .fontWeight(.semibold)
-            Rectangle()
-                .frame(width: (UIScreen.main.bounds.width / 2) - 65, height: 0.7 )
-        }.foregroundColor(.gray)
-    }
-}
-
-struct appleSignup: View {
-    var body: some View {
-        Button(action: {
-            // Your action on tap
-        }) {
-            HStack {
-                Image("AppleLogo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 24)
-                    .padding(.leading, 20)
-                
-                Text("Sign up with Apple")
-                    .padding(.vertical, 15)
-                    .padding(.trailing,20)
-                    .fontWeight(.semibold)
-                    .foregroundColor(.black)
+            Text("Don't have an account?")
+            NavigationLink{
+                SignInView()
+            } label: {
+                Text("Sign up")
             }
-        }
-        .frame(width: 300, height: 50)
-        .overlay(
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(Color(.systemGray3), lineWidth: 1)
-        )
-        .background(Color.white)
-    }
-}
-
-struct googleSignup: View {
-    var body: some View {
-        Button {
-            print("Google login")
-        } label: {
-            HStack{
-                Image("GoogleLogo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 24)
-                    .padding(.leading, 20)
-                Text("Sign up with Google")
-                    .padding(.vertical, 15)
-                    .padding(.trailing,20)
-                    .fontWeight(.semibold)
-                    .foregroundColor(.black)
-            }
-            .frame(width: 300,height: 50)
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color(.systemGray3), lineWidth: 1) // Apply border with corner radius
-            )
-            .background(Color.white) // Set a background color to prevent content from being affected by the border
             
-        }
+        }.font(.subheadline)
     }
 }

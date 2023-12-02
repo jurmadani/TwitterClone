@@ -33,7 +33,7 @@ struct SplashView: View {
         NavigationView {
             ZStack {
                 
-                SignInView()
+                SignUpView()
                 
                 VStack {
                     Image("TwitterLogo")

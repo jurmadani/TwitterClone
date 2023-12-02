@@ -19,27 +19,28 @@ struct SlideMenuView: View {
             //header container
             VStack(alignment: .leading, spacing: 10){
                 
-                //user profile picture
-                AsyncImage(url: URL(string: "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png")) { phase in
-                    if let image = phase.image {
-                        image
-                            .resizable()
-                            .frame(width:55,height: 55)
-                            .cornerRadius(99)
-                        
-                    } else if phase.error != nil {
-                        Color.red // Indicates an error.
-                    } else {
-                        ProgressView()
-                    }
-                }
                 
+                NavigationLink{
+                    ProfileView()
+                        .toolbar(.hidden)
+                    
+                } label: {
+                    //user profile picture
+                    Image("ProfileLogo")
+                        .resizable()
+                        .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                        .frame(width:55,height: 55)
+                        .cornerRadius(99)
+                }
+       
+               
+
                 //user name
-                Text("Jurmao")
+                Text("Elon Musk")
                     .font(.title2.bold())
                 
                 //user username
-                Text("@jurma08")
+                Text("@elonmusk")
                     .font(.callout)
                     .foregroundStyle(Color.gray)
                 
@@ -53,7 +54,7 @@ struct SlideMenuView: View {
                             Text("Following")
                                 .foregroundStyle(Color.gray)
                         } icon: {
-                            Text("432")
+                            Text("497")
                                 .fontWeight(.semibold)
                         }
                         
@@ -67,7 +68,7 @@ struct SlideMenuView: View {
                             Text("Followers")
                                 .foregroundStyle(Color.gray)
                         } icon: {
-                            Text("1.2M")
+                            Text("165M")
                                 .fontWeight(.semibold)
                             
                             
