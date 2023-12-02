@@ -10,10 +10,12 @@ import SwiftUI
 struct SignInView: View {
     @State private var email = ""
     @State private var password = ""
+    
+    @Environment(\.colorScheme) var colorScheme
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         NavigationStack{
-            
-            
             VStack(spacing:10){
                 //twitter logo
                 TwitterLogo(frameWidth: 30, paddingTop: 15)
@@ -22,9 +24,9 @@ struct SignInView: View {
                 HeroText()
                 // buttons
                 //continue with google button
-                googleSignup()
+                googleSignup(colorScheme: colorScheme)
                 //continue with apple
-                appleSignup()
+                appleSignup(colorScheme: colorScheme)
                 //or separator
                 orSeparator()
                 //inputs
@@ -98,15 +100,17 @@ struct LoginButton: View {
 }
 
 struct FooterText: View {
+    @Environment(\.presentationMode) var presentationMode
+
     var body: some View {
-        HStack{
+        HStack {
             Text("Don't have an account?")
-            NavigationLink{
-                SignInView()
-            } label: {
-                Text("Sign up")
+            Button("Sign up") {
+                // Dismiss the current view and go back
+                presentationMode.wrappedValue.dismiss()
             }
-            
-        }.font(.subheadline)
+            .foregroundColor(Color(UIColor(red: 29/255, green: 161/255, blue: 242/255, alpha: 1.0)))
+        }
+        .font(.subheadline)
     }
 }

@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct SignUpView: View {
+    
+    //Dark mode
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         NavigationStack{
             VStack {
@@ -23,9 +27,9 @@ struct SignUpView: View {
                 // buttons
                 Spacer()
                 //continue with google button
-                googleSignup()
+                googleSignup(colorScheme: colorScheme)
                 //continue with apple
-                appleSignup()
+                appleSignup(colorScheme: colorScheme)
                 //or separator
                 orSeparator()
                 // create account button
@@ -42,7 +46,7 @@ struct SignUpView: View {
 }
 
 #Preview {
-    SignInView()
+    SignUpView()
 }
 
 struct alreadyHaveAnAccout: View {
@@ -111,22 +115,28 @@ struct orSeparator: View {
 }
 
 struct appleSignup: View {
+    
+    let colorScheme : ColorScheme
+    
     var body: some View {
         Button(action: {
             // Your action on tap
         }) {
             HStack {
                 Image("AppleLogo")
+                    .renderingMode(.template)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 24)
                     .padding(.leading, 20)
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
+                    
                 
                 Text("Sign up with Apple")
                     .padding(.vertical, 15)
                     .padding(.trailing,20)
                     .fontWeight(.semibold)
-                    .foregroundColor(.black)
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
             }
         }
         .frame(width: 300, height: 50)
@@ -134,11 +144,14 @@ struct appleSignup: View {
             RoundedRectangle(cornerRadius: 10)
                 .stroke(Color(.systemGray3), lineWidth: 1)
         )
-        .background(Color.white)
+        .background(colorScheme == .dark ? Color.black : Color.white) // Set a background color to prevent content from being affected by the border
     }
 }
 
 struct googleSignup: View {
+    
+    let colorScheme: ColorScheme
+    
     var body: some View {
         Button {
             print("Google login")
@@ -153,14 +166,14 @@ struct googleSignup: View {
                     .padding(.vertical, 15)
                     .padding(.trailing,20)
                     .fontWeight(.semibold)
-                    .foregroundColor(.black)
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
             }
             .frame(width: 300,height: 50)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(Color(.systemGray3), lineWidth: 1) // Apply border with corner radius
             )
-            .background(Color.white) // Set a background color to prevent content from being affected by the border
+            .background(colorScheme == .dark ? Color.black : Color.white) // Set a background color to prevent content from being affected by the border
             
         }
     }
