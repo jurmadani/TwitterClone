@@ -103,3 +103,15 @@ let profileTweetsMockData: [PostModel] = [post7, post8, post9, post10, post11, p
 
 // Add more users, comments, and posts as needed for your mock data
 
+
+//Trends mock data array
+
+let trend1 = TrendsModel(id: 1, category: "Gaming", trending: true, title: "Cyberpunk 2077 Update", tweets: "2.8M")
+let trend2 = TrendsModel(id: 2, category: "Entertainment", trending: false, title: "New Marvel Movie Premiere", tweets: "3.2M")
+let trend3 = TrendsModel(id: 3, category: "Technology", trending: true, title: "Foldable Smartphones", tweets: "1.5M")
+let trend4 = TrendsModel(id: 4, category: "Music", trending: false, title: "Top 10 Chart Hits", tweets: "2.1M")
+let trend5 = TrendsModel(id: 5, category: "Travel", trending: false, title: "Exotic Vacation Spots", tweets: "1.7M")
+
+
+let trendsMockData : [TrendsModel] = [trend1, trend2, trend3, trend4, trend5]
+

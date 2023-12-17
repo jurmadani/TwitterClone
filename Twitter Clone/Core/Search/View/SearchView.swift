@@ -18,7 +18,7 @@ struct SearchView: View {
             Divider()
             //feed posts
             ScrollView{
-                Text("Search view")
+                MockTrends()
             }
         }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }

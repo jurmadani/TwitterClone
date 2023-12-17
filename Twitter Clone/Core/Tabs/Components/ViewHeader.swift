@@ -46,7 +46,9 @@ struct ViewHeader: View {
             switch view{
             case "feed":
                 //twitter logo
-                TwitterLogo(frameWidth: 27, paddingTop: 0)
+                TwitterLogo(frameWidth: 27, paddingTop: 0).onTapGesture {
+                    print("test")
+                }
             case "search":
                 SearchBar(searchText: $searchText)
             case "community":
