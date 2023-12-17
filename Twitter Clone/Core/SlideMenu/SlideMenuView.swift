@@ -13,7 +13,7 @@ struct SlideMenuView: View {
     @Binding var showMenu : Bool
     
     var body: some View {
-       
+        
         VStack(alignment: .leading, spacing: 0 ){
             
             //header container
@@ -32,9 +32,9 @@ struct SlideMenuView: View {
                         .frame(width:55,height: 55)
                         .cornerRadius(99)
                 }
-       
-               
-
+                
+                
+                
                 //user name
                 Text("Elon Musk")
                     .font(.title2.bold())
@@ -88,29 +88,29 @@ struct SlideMenuView: View {
             ScrollView(.vertical, showsIndicators: false){
                 VStack(alignment: .leading, spacing: 25){
                     //Tab buttons
-                    TabButton(title: "Profile", image: "person")
+                    TabButton(title: "Profile", image: "person", destination: ProfileView())
                     
-                    TabButton(title: "Bookmarks", image: "bookmark")
+                    TabButton(title: "Bookmarks", image: "bookmark", destination: ProfileView())
                     
-                    TabButton(title: "Messages", image: "envelope")
+                    TabButton(title: "Messages", image: "envelope", destination: ProfileView())
                     
-                    TabButton(title: "Discover", image: "number")
+                    TabButton(title: "Discover", image: "number", destination: ProfileView())
                     
-                    TabButton(title: "Lists", image: "list.bullet.rectangle.portrait")
+                    TabButton(title: "Lists", image: "list.bullet.rectangle.portrait", destination: ProfileView())
                     
-                    TabButton(title: "Profile", image: "person")
+                    TabButton(title: "Monetization", image: "dollarsign.circle", destination: ProfileView())
                     
                     //twitter ads
                     Divider()
                     
-                    TabButton(title: "Twitter Ads", image: "square.and.arrow.up")
+                    TabButton(title: "Twitter Ads", image: "square.and.arrow.up", destination: ProfileView())
                     
                 }
                 .padding()
                 .padding(.leading)
                 .padding(.top, 30)
                 
-    
+                
                 
             }
             VStack{
@@ -141,22 +141,22 @@ struct SlideMenuView: View {
     }
     
     @ViewBuilder
-    func TabButton(title: String, image: String) -> some View{
-        Button{
-            
-        } label : {
-            HStack(spacing: 14){
-                
+    func TabButton<Destination: View>(title: String, image: String, destination: Destination) -> some View {
+        NavigationLink(destination: destination.toolbar(.hidden)) {
+            HStack(spacing: 14) {
                 Image(systemName: image)
                     .imageScale(.large)
                     .frame(width: 30)
                 Text(title)
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .fontWeight(.bold)
             }
             .foregroundColor(.primary)
-            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: .leading)
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
+   
     }
+
+
 }
 
 extension View {
