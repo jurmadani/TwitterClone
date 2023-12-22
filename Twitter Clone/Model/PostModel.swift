@@ -115,3 +115,15 @@ let trend5 = TrendsModel(id: 5, category: "Travel", trending: false, title: "Exo
 
 let trendsMockData : [TrendsModel] = [trend1, trend2, trend3, trend4, trend5]
 
+let notifications: [NotificationModel] = [
+    NotificationModel(title: "JohnDoe", description: "Just posted a new selfie! 🤳"),
+    NotificationModel(title: "AliceSmith", description: "Excited about the upcoming project. Stay tuned!"),
+    NotificationModel(title: "TechEnthusiast", description: "Check out this cool tech gadget. #TechTuesday"),
+    NotificationModel(title: "SportsFanatic", description: "What a game! 🏀 #SportsTalk"),
+    NotificationModel(title: "TravelExplorer", description: "Amazing views from my latest trip. #TravelGoals"),
+    NotificationModel(title: "Foodie", description: "Delicious homemade recipe. #FoodieFriday"),
+    NotificationModel(title: "Bookworm", description: "Just finished reading an incredible book. 📚 #BookClub"),
+    NotificationModel(title: "GamingGuru", description: "New game alert! 🎮 Who's playing?"),
+    NotificationModel(title: "FitnessFan", description: "Reached a new fitness milestone. 💪 #FitnessJourney"),
+    NotificationModel(title: "MusicLover", description: "Discovering new tunes. 🎶 #MusicMonday")
+]

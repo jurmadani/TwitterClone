@@ -124,6 +124,7 @@ struct CommunityCard: View {
       
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.top)
         
         Divider()
             .padding(.top)

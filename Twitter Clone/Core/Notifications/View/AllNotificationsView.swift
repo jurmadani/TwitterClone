@@ -9,7 +9,14 @@ import SwiftUI
 
 struct AllNotificationsView: View {
     var body: some View {
-        Text("All notifications view")
+        ScrollView{
+    
+            ForEach(notifications, id: \.title) { notification in
+                NotificationCard(notification: notification)
+                Divider()
+            }
+        }
+        .padding(.top, 20)
     }
 }
 
